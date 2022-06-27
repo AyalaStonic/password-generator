@@ -11,6 +11,35 @@ function generatePassword() {
     var userChoice = [];
 
 // ask user for their desired password length
-    var characterPassword = window.prompt("How many characters would you like your password to be?");
+    var characterPassword = window.prompt("How many characters would you like your password to be?it must be more than 5 characters");
 }
+// ensure password
+if (isNaN(characterPassword) || characterPassword < 5) {
+  window.alert("Password length must be a number more than 5. Please try again.");
+  return generatePassword();
+}
+
+// list of user input variables
+var confirmLowercase = window.confirm("Would you like to include lowercase letters in your password?");
+var confirmUppercase = window.confirm("Would you like to include uppercase letters in your password?");
+var confirmNumbers = window.confirm("Would you like to include numbers in your password?");
+var confirmSymbols = window.confirm("Would you like to include special characters in your password?");
+
+// lowercase, uppercase, and/or special characters
+if (confirmLowercase) {
+  userChoice = userChoice.concat(alphaLower);
+}
+if (confirmUppercase) {
+  userChoice = userChoice.concat(alphaUpper);
+}
+if (confirmNumbers) {
+  userChoice = userChoice.concat(number);
+}
+if (confirmSymbols) {
+  userChoice = userChoice.concat(symbol);
+}
+
+// validate input
+console.log(userChoice);
+
     generatePassword();
