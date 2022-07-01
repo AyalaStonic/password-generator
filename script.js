@@ -5,7 +5,7 @@ var generateBtn = document
 function generatePassword()
 {
 
-   // list of all characters available to generate password
+              // list of all characters available to generate password
    var alphaUpper = ["A", "B", "C", "D",
       "E", "F", "G", "H", "I", "J",
       "K", "L", "M", "N", "O", "P",
@@ -29,13 +29,14 @@ function generatePassword()
    ];
    var userChoice = [];
 
-   // ask user for their desired password length
+          // ask user for their desired password length
    var characterCount = window.prompt(
       "How many characters would you like your password to be?"
    );
 
 
-   // list of user input variables
+
+            // user input variables
 
    var confirmNumbers = window.confirm(
 	"Would you like to include numbers in your password?"
@@ -52,7 +53,10 @@ function generatePassword()
       "Would you like to include special characters in your password?"
    );
 
-   // include lowercase, uppercase, and/or special characters
+
+
+                 // if password include lowercase, uppercase, and/or special characters
+
    if (confirmLowercase)
    {
       userChoice = userChoice.concat(
@@ -74,8 +78,8 @@ function generatePassword()
          symbol);
    }
 
-   // validate input
    console.log(userChoice);
+
 
    // generate password based on user criteria
    var newPassword = "";
@@ -89,11 +93,11 @@ function generatePassword()
          userChoice[randomChar];
    }
 
-   // display generated password!
+       // display generated password!
    return newPassword;
 }
 
-// Write password to the #password input
+        // Write password to the #password input
 function writePassword()
 {
    var password = generatePassword();
@@ -104,6 +108,6 @@ function writePassword()
 
 }
 
-// Add event listener to generate button
+      //generate buttom
 generateBtn.addEventListener("click",
    writePassword);
